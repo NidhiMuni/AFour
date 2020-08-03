@@ -3,6 +3,7 @@
 * Install Django: pip install Django
 * Install Django REST Framework: pip install django djangorestframework django-cors-headers
 * Install PostgreSQL from postgresql.org
+* Install psycopg: pip install psycopg2
 
 # Setup test database
 * Create a new empty database called qms 
