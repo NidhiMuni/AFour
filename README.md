@@ -5,8 +5,9 @@
 * Install PostgreSQL from postgresql.org
 
 # Setup test database
-* Restore database using pg_restore: pg_restore -h localhost -p 5432 -U postgres -d qms -v "I:\Nidhi\AFour\dump-test_a4services-202007171941.backup"
-* Setup a user with username = myprojectuser and password = password
+* Create a new empty database called qms 
+* Restore database using pg_restore: pg_restore -h localhost -p 5432 -U postgres -d qms -v "<repository root>\Data\dump-test_a4services-202007171941.backup"
+* Setup a new user "myprojectuser" and grant privileges to access tables in QMS database: psql -h localhost -d qms -U postgres -p 5432 -a -q -f "<repository root>\Data\QmsDbConfiguration.sql"
 
 # Execution instructions
 * Open a command prompt and change directory to the folder where the repository is cloned
