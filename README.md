@@ -1,3 +1,11 @@
+# APIs
+1. **/api/employees**
+* This returns a JSON of all employees in the database
+* It takes an optional query parameter coe_id to return employees in the given coe_id. For example, /api/employees?coe_id=AFTC0629 will return the list of employees with the COE AFTC0629
+2. **/api/quarterlyreview**
+* This returns a JSON of the quarterly review results of all employees in the database
+* It takes an optional query parameter employee_id to return quarterly review results in the given employee_id. For example, /api/quarterlyreview?employee_id=AFTI0015 will return the list of quarterly review results for employee AFTI0015
+
 # Setup instructions
 * Install Python 3.8 from python.org
 * Install Django: pip install Django
@@ -15,9 +23,6 @@
 * Run the following command to start the web server: python manage.py runserver
 * Once it is running, you can call the APIs
 
-# APIs
-* /api/employees
-** This returns a JSON of all employees in the database
-** It takes an optional query parameter coe_id to return employees in the given coe_id. For example, /api/employees?coe_id=AFTC0629 will return the list of employees in the given COE
+
 
 
