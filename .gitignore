@@ -1,2 +1,4 @@
 
 COEProject/__pycache__/urls.cpython-38.pyc
+*.pyc
+.vscode/launch.json
