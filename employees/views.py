@@ -1,7 +1,12 @@
 from django.shortcuts import render
+from django.http import HttpRequest, HttpResponse, JsonResponse
+from rest_framework.parsers import JSONParser
 from .models import Employee, QuarterlyReview
 from .serializers import EmployeeSerializer, QuarterlyReviewSerializer
 from rest_framework import generics
+from django.views.decorators.csrf import csrf_exempt
+
+import json
 
 # import the logging library
 import logging
@@ -9,9 +14,12 @@ import logging
 # Get an instance of a logger
 logger = logging.getLogger(__name__)
 
+#serializers.register_serializer('json', 'employees.serializers.EmployeeSerializer')
+
 class EmployeeListCreate(generics.ListCreateAPIView):
     serializer_class = EmployeeSerializer
-    
+    logger.warning(EmployeeSerializer)
+
     def get_queryset(self):
         # retrieve all employee objects from DB
         queryset = Employee.objects.all()
@@ -29,24 +37,32 @@ class EmployeeListCreate(generics.ListCreateAPIView):
             
         return queryset
 
-class Employees(generics.ListCreateAPIView):
+class EmployeeView(generics.ListCreateAPIView):
     serializer_class = EmployeeSerializer
 
-    def get_queryset(self):
-        # retrieve all employee objects from DB
-        queryset = Employee.objects.all()
 
-        logger.warning('Retrieved employees. Count = %s', queryset.count())
-           
-        empId = self.request.GET.get('empId', None)
-
-        logger.warning('Path = %s', empId)
-
-        return queryset
-  
+    @csrf_exempt #make the request exempt from providing CSRF cookie
+    def emp_by_id(request, empId):
 
 
+        if request.method == 'GET':
+            # get data for employee with id = empId 
+            employee = Employee.objects.get(id = empId)
 
+            # serialize the data
+            data = EmployeeSerializer(employee).data
+
+            #return the data as Json
+            return JsonResponse(data, safe=False)
+
+        elif request.method == 'PUT':
+            receivedPayload = json.loads(request.body.decode('utf-8'))
+            employee = Employee.objects.get(id = empId)
+            employee.update_fields(receivedPayload)
+            employee.save()
+            return HttpResponse(status=201)
+          
+        
 class QuarterlyReviewListCreate(generics.ListCreateAPIView):
     serializer_class = QuarterlyReviewSerializer
 

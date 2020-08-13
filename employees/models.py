@@ -31,6 +31,10 @@ class Employee(models.Model):
         managed = False
         db_table = 'employee'
 
+    def update_fields(self, newValueDictionary):
+        self.coe_id = newValueDictionary['coe_id']
+        self.coe = newValueDictionary['coe']
+
 
 class Quarterly(models.Model):
     id = models.IntegerField(primary_key=True)

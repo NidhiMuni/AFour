@@ -2,3 +2,7 @@
 COEProject/__pycache__/urls.cpython-38.pyc
 *.pyc
 .vscode/launch.json
+*.pyc
+*.log
+employees/__pycache__/models.cpython-38.pyc
+employees/__pycache__/urls.cpython-38.pyc
