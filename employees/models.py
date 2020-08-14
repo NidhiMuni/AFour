@@ -7,7 +7,6 @@
 # Feel free to rename the models, but don't rename db_table values or field names.
 from django.db import models
 
-
 class Employee(models.Model):
     id = models.CharField(primary_key=True, max_length=200)
     first_name = models.CharField(max_length=200)
@@ -31,11 +30,6 @@ class Employee(models.Model):
         managed = False
         db_table = 'employee'
 
-    def update_fields(self, newValueDictionary):
-        self.coe_id = newValueDictionary['coe_id']
-        self.coe = newValueDictionary['coe']
-
-
 class Quarterly(models.Model):
     id = models.IntegerField(primary_key=True)
     quarter = models.CharField(max_length=200, blank=True, null=True)
@@ -43,7 +37,6 @@ class Quarterly(models.Model):
     class Meta:
         managed = False
         db_table = 'quarterly'
-
 
 class QuarterlyReview(models.Model):
     id = models.BigAutoField(primary_key=True)
