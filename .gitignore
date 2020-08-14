@@ -10,3 +10,5 @@ employees/__pycache__/urls.cpython-38.pyc
 *.pyc
 *.log
 *.pyc
+*.pyc
+*.log

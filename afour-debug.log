@@ -6524,3 +6524,15 @@ Traceback (most recent call last):
     return self.retrieve(request, *args, **kwargs)
 AttributeError: 'EmployeeView' object has no attribute 'retrieve'
 "GET /api/employees/AFTD002 HTTP/1.1" 500 16946
+Bad Request: /api/employees/AFTD002
+"PUT /api/employees/AFTD002 HTTP/1.1" 400 108
+Not Found: /api/employees/
+"GET /api/employees/ HTTP/1.1" 404 2381
+Not Found: /api/employees/
+"GET /api/employees/ HTTP/1.1" 404 2381
+Not Found: /api/employees/
+"PUT /api/employees/ HTTP/1.1" 404 2381
+Method Not Allowed: /api/employees
+"PUT /api/employees HTTP/1.1" 405 40
+Not Found: /api/employees/
+"GET /api/employees/ HTTP/1.1" 404 2381
