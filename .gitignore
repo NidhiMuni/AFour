@@ -8,3 +8,5 @@ employees/__pycache__/models.cpython-38.pyc
 employees/__pycache__/urls.cpython-38.pyc
 *.log
 *.pyc
+*.log
+*.pyc

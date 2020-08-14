@@ -1,8 +1,8 @@
 from django.shortcuts import render
-from django.http import HttpRequest, HttpResponse, JsonResponse
+from django.http import HttpRequest, HttpResponse, JsonResponse, HttpResponseBadRequest
 from rest_framework.parsers import JSONParser
 from rest_framework.generics import GenericAPIView
-from rest_framework.mixins import UpdateModelMixin
+from rest_framework.mixins import UpdateModelMixin, RetrieveModelMixin
 from .models import Employee, QuarterlyReview
 from .serializers import EmployeeSerializer, QuarterlyReviewSerializer
 from rest_framework import generics
@@ -37,41 +37,24 @@ class EmployeesView(generics.ListCreateAPIView):
             
         return queryset
 
-class EmployeeView(GenericAPIView, UpdateModelMixin):
+class EmployeeView(
+        RetrieveModelMixin,
+        GenericAPIView, 
+        UpdateModelMixin):
+    serializer_class = EmployeeSerializer
+    lookup_field = 'id'
+
     def get(self, request, *args, **kwargs):
-        # retrieve the empId variable from the URL
-        if (kwargs.get('empId') is not None):
-            empId = kwargs['empId']
-        else:
-            return HttpResponse('Invalid request - empId not found', statu = 400)
-        
-        # get data for employee with id = empId 
-        self.queryset = Employee.objects.get(id = empId)
-        self.kwargs['pk'] = empId
-        
-        # get data for employee with id = empId 
-        employee = Employee.objects.get(id = empId)
-
-        # serialize the data
-        data = EmployeeSerializer(employee).data
-
-        #return the data as Json
-        return JsonResponse(data, safe=False)
+        return self.retrieve(request, *args, **kwargs)
 
     def put(self, request, *args, **kwargs):
-        # retrieve the empId variable from the URL
-        if (kwargs.get('empId') is not None):
-            empId = kwargs['empId']
-        else:
-            return HttpResponse('Invalid request - empId not found', statu = 400)
-        
-        # get data for employee with id = empId 
-        self.queryset = Employee.objects.get(id = empId)
-        self.kwargs['pk'] = empId
-        
         return self.partial_update(request, *args, **kwargs)
 
-class QuarterlyReviewListCreate(generics.ListCreateAPIView):
+    def get_queryset(self):
+        empId = self.kwargs['id']
+        return Employee.objects.filter(id = empId) 
+
+class QuarterlyReviewView(generics.ListCreateAPIView):
     serializer_class = QuarterlyReviewSerializer
 
     def get_queryset(self):
