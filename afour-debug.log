@@ -5563,3 +5563,403 @@ AttributeError: 'Employee' object has no attribute 'data'
 "PUT /api/employees/AFTD002 HTTP/1.1" 500 72697
 Not Found: /favicon.ico
 "GET /favicon.ico HTTP/1.1" 404 2375
+Internal Server Error: /api/employees/AFTD002
+Traceback (most recent call last):
+  File "C:\Program Files (x86)\Python38-32\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Program Files (x86)\Python38-32\lib\site-packages\django\core\handlers\base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Program Files (x86)\Python38-32\lib\site-packages\django\core\handlers\base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Program Files (x86)\Python38-32\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\Program Files (x86)\Python38-32\lib\site-packages\django\views\generic\base.py", line 71, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\jayu_\AppData\Roaming\Python\Python38\site-packages\rest_framework\views.py", line 505, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\jayu_\AppData\Roaming\Python\Python38\site-packages\rest_framework\views.py", line 465, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\jayu_\AppData\Roaming\Python\Python38\site-packages\rest_framework\views.py", line 476, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\jayu_\AppData\Roaming\Python\Python38\site-packages\rest_framework\views.py", line 502, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "I:\Nidhi\GitHub\AFour\employees\views.py", line 69, in put
+    return self.partial_update(request, *args, **kwargs)
+  File "C:\Users\jayu_\AppData\Roaming\Python\Python38\site-packages\rest_framework\mixins.py", line 82, in partial_update
+    return self.update(request, *args, **kwargs)
+  File "C:\Users\jayu_\AppData\Roaming\Python\Python38\site-packages\rest_framework\mixins.py", line 65, in update
+    instance = self.get_object()
+  File "C:\Users\jayu_\AppData\Roaming\Python\Python38\site-packages\rest_framework\generics.py", line 83, in get_object
+    queryset = self.filter_queryset(self.get_queryset())
+  File "C:\Users\jayu_\AppData\Roaming\Python\Python38\site-packages\rest_framework\generics.py", line 63, in get_queryset
+    assert self.queryset is not None, (
+AssertionError: 'EmployeeView' should either include a `queryset` attribute, or override the `get_queryset()` method.
+"PUT /api/employees/AFTD002 HTTP/1.1" 500 18258
+Internal Server Error: /api/employees/AFTD002
+Traceback (most recent call last):
+  File "C:\Program Files (x86)\Python38-32\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Program Files (x86)\Python38-32\lib\site-packages\django\core\handlers\base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Program Files (x86)\Python38-32\lib\site-packages\django\core\handlers\base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Program Files (x86)\Python38-32\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\Program Files (x86)\Python38-32\lib\site-packages\django\views\generic\base.py", line 71, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\jayu_\AppData\Roaming\Python\Python38\site-packages\rest_framework\views.py", line 505, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\jayu_\AppData\Roaming\Python\Python38\site-packages\rest_framework\views.py", line 465, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\jayu_\AppData\Roaming\Python\Python38\site-packages\rest_framework\views.py", line 476, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\jayu_\AppData\Roaming\Python\Python38\site-packages\rest_framework\views.py", line 502, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "I:\Nidhi\GitHub\AFour\employees\views.py", line 70, in put
+    return self.partial_update(request, *args, **kwargs)
+  File "C:\Users\jayu_\AppData\Roaming\Python\Python38\site-packages\rest_framework\mixins.py", line 82, in partial_update
+    return self.update(request, *args, **kwargs)
+  File "C:\Users\jayu_\AppData\Roaming\Python\Python38\site-packages\rest_framework\mixins.py", line 65, in update
+    instance = self.get_object()
+  File "C:\Users\jayu_\AppData\Roaming\Python\Python38\site-packages\rest_framework\generics.py", line 83, in get_object
+    queryset = self.filter_queryset(self.get_queryset())
+  File "C:\Users\jayu_\AppData\Roaming\Python\Python38\site-packages\rest_framework\generics.py", line 63, in get_queryset
+    assert self.queryset is not None, (
+AssertionError: 'EmployeeView' should either include a `queryset` attribute, or override the `get_queryset()` method.
+"PUT /api/employees/AFTD002 HTTP/1.1" 500 18258
+Internal Server Error: /api/employees/AFTD002
+Traceback (most recent call last):
+  File "C:\Program Files (x86)\Python38-32\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Program Files (x86)\Python38-32\lib\site-packages\django\core\handlers\base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Program Files (x86)\Python38-32\lib\site-packages\django\core\handlers\base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Program Files (x86)\Python38-32\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\Program Files (x86)\Python38-32\lib\site-packages\django\views\generic\base.py", line 71, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\jayu_\AppData\Roaming\Python\Python38\site-packages\rest_framework\views.py", line 505, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\jayu_\AppData\Roaming\Python\Python38\site-packages\rest_framework\views.py", line 465, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\jayu_\AppData\Roaming\Python\Python38\site-packages\rest_framework\views.py", line 476, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\jayu_\AppData\Roaming\Python\Python38\site-packages\rest_framework\views.py", line 502, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "I:\Nidhi\GitHub\AFour\employees\views.py", line 72, in put
+    return self.partial_update(request, *args, **kwargs)
+  File "C:\Users\jayu_\AppData\Roaming\Python\Python38\site-packages\rest_framework\mixins.py", line 82, in partial_update
+    return self.update(request, *args, **kwargs)
+  File "C:\Users\jayu_\AppData\Roaming\Python\Python38\site-packages\rest_framework\mixins.py", line 65, in update
+    instance = self.get_object()
+  File "C:\Users\jayu_\AppData\Roaming\Python\Python38\site-packages\rest_framework\generics.py", line 83, in get_object
+    queryset = self.filter_queryset(self.get_queryset())
+  File "C:\Users\jayu_\AppData\Roaming\Python\Python38\site-packages\rest_framework\generics.py", line 63, in get_queryset
+    assert self.queryset is not None, (
+AssertionError: 'EmployeeView' should either include a `queryset` attribute, or override the `get_queryset()` method.
+"PUT /api/employees/AFTD002 HTTP/1.1" 500 18258
+Internal Server Error: /api/employees/AFTD002
+Traceback (most recent call last):
+  File "C:\Program Files (x86)\Python38-32\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Program Files (x86)\Python38-32\lib\site-packages\django\core\handlers\base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Program Files (x86)\Python38-32\lib\site-packages\django\core\handlers\base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Program Files (x86)\Python38-32\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\Program Files (x86)\Python38-32\lib\site-packages\django\views\generic\base.py", line 71, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\jayu_\AppData\Roaming\Python\Python38\site-packages\rest_framework\views.py", line 505, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\jayu_\AppData\Roaming\Python\Python38\site-packages\rest_framework\views.py", line 465, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\jayu_\AppData\Roaming\Python\Python38\site-packages\rest_framework\views.py", line 476, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\jayu_\AppData\Roaming\Python\Python38\site-packages\rest_framework\views.py", line 502, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "I:\Nidhi\GitHub\AFour\employees\views.py", line 72, in put
+    return self.partial_update(request, *args, **kwargs)
+  File "C:\Users\jayu_\AppData\Roaming\Python\Python38\site-packages\rest_framework\mixins.py", line 82, in partial_update
+    return self.update(request, *args, **kwargs)
+  File "C:\Users\jayu_\AppData\Roaming\Python\Python38\site-packages\rest_framework\mixins.py", line 65, in update
+    instance = self.get_object()
+  File "C:\Users\jayu_\AppData\Roaming\Python\Python38\site-packages\rest_framework\generics.py", line 83, in get_object
+    queryset = self.filter_queryset(self.get_queryset())
+  File "C:\Users\jayu_\AppData\Roaming\Python\Python38\site-packages\rest_framework\generics.py", line 63, in get_queryset
+    assert self.queryset is not None, (
+AssertionError: 'EmployeeView' should either include a `queryset` attribute, or override the `get_queryset()` method.
+"PUT /api/employees/AFTD002 HTTP/1.1" 500 18258
+Internal Server Error: /api/employees/AFTD002
+Traceback (most recent call last):
+  File "C:\Program Files (x86)\Python38-32\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Program Files (x86)\Python38-32\lib\site-packages\django\core\handlers\base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Program Files (x86)\Python38-32\lib\site-packages\django\core\handlers\base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Program Files (x86)\Python38-32\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\Program Files (x86)\Python38-32\lib\site-packages\django\views\generic\base.py", line 71, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\jayu_\AppData\Roaming\Python\Python38\site-packages\rest_framework\views.py", line 505, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\jayu_\AppData\Roaming\Python\Python38\site-packages\rest_framework\views.py", line 465, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\jayu_\AppData\Roaming\Python\Python38\site-packages\rest_framework\views.py", line 476, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\jayu_\AppData\Roaming\Python\Python38\site-packages\rest_framework\views.py", line 502, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "I:\Nidhi\GitHub\AFour\employees\views.py", line 72, in put
+    return self.partial_update(request, *args, **kwargs)
+  File "C:\Users\jayu_\AppData\Roaming\Python\Python38\site-packages\rest_framework\mixins.py", line 82, in partial_update
+    return self.update(request, *args, **kwargs)
+  File "C:\Users\jayu_\AppData\Roaming\Python\Python38\site-packages\rest_framework\mixins.py", line 65, in update
+    instance = self.get_object()
+  File "C:\Users\jayu_\AppData\Roaming\Python\Python38\site-packages\rest_framework\generics.py", line 83, in get_object
+    queryset = self.filter_queryset(self.get_queryset())
+  File "C:\Users\jayu_\AppData\Roaming\Python\Python38\site-packages\rest_framework\generics.py", line 63, in get_queryset
+    assert self.queryset is not None, (
+AssertionError: 'EmployeeView' should either include a `queryset` attribute, or override the `get_queryset()` method.
+"PUT /api/employees/AFTD002 HTTP/1.1" 500 18258
+Internal Server Error: /api/employees/AFTD002
+Traceback (most recent call last):
+  File "C:\Program Files (x86)\Python38-32\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Program Files (x86)\Python38-32\lib\site-packages\django\core\handlers\base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Program Files (x86)\Python38-32\lib\site-packages\django\core\handlers\base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Program Files (x86)\Python38-32\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\Program Files (x86)\Python38-32\lib\site-packages\django\views\generic\base.py", line 71, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\jayu_\AppData\Roaming\Python\Python38\site-packages\rest_framework\views.py", line 505, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\jayu_\AppData\Roaming\Python\Python38\site-packages\rest_framework\views.py", line 465, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\jayu_\AppData\Roaming\Python\Python38\site-packages\rest_framework\views.py", line 476, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\jayu_\AppData\Roaming\Python\Python38\site-packages\rest_framework\views.py", line 502, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "I:\Nidhi\GitHub\AFour\employees\views.py", line 72, in put
+    return self.partial_update(request, *args, **kwargs)
+  File "C:\Users\jayu_\AppData\Roaming\Python\Python38\site-packages\rest_framework\mixins.py", line 82, in partial_update
+    return self.update(request, *args, **kwargs)
+  File "C:\Users\jayu_\AppData\Roaming\Python\Python38\site-packages\rest_framework\mixins.py", line 65, in update
+    instance = self.get_object()
+  File "C:\Users\jayu_\AppData\Roaming\Python\Python38\site-packages\rest_framework\generics.py", line 88, in get_object
+    assert lookup_url_kwarg in self.kwargs, (
+AssertionError: Expected view EmployeeView to be called with a URL keyword argument named "pk". Fix your URL conf, or set the `.lookup_field` attribute on the view correctly.
+"PUT /api/employees/AFTD002 HTTP/1.1" 500 18198
+Not Found: /api/employees/AFTD002
+"PUT /api/employees/AFTD002 HTTP/1.1" 404 23
+Internal Server Error: /api/employees/AFTD002
+Traceback (most recent call last):
+  File "C:\Program Files (x86)\Python38-32\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Program Files (x86)\Python38-32\lib\site-packages\django\core\handlers\base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Program Files (x86)\Python38-32\lib\site-packages\django\core\handlers\base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Program Files (x86)\Python38-32\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\Program Files (x86)\Python38-32\lib\site-packages\django\views\generic\base.py", line 71, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\jayu_\AppData\Roaming\Python\Python38\site-packages\rest_framework\views.py", line 505, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\jayu_\AppData\Roaming\Python\Python38\site-packages\rest_framework\views.py", line 465, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\jayu_\AppData\Roaming\Python\Python38\site-packages\rest_framework\views.py", line 476, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\jayu_\AppData\Roaming\Python\Python38\site-packages\rest_framework\views.py", line 502, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "I:\Nidhi\GitHub\AFour\employees\views.py", line 73, in put
+    return self.partial_update(request, *args, **kwargs)
+  File "C:\Users\jayu_\AppData\Roaming\Python\Python38\site-packages\rest_framework\mixins.py", line 82, in partial_update
+    return self.update(request, *args, **kwargs)
+  File "C:\Users\jayu_\AppData\Roaming\Python\Python38\site-packages\rest_framework\mixins.py", line 65, in update
+    instance = self.get_object()
+  File "C:\Users\jayu_\AppData\Roaming\Python\Python38\site-packages\rest_framework\generics.py", line 88, in get_object
+    assert lookup_url_kwarg in self.kwargs, (
+AssertionError: Expected view EmployeeView to be called with a URL keyword argument named "pk". Fix your URL conf, or set the `.lookup_field` attribute on the view correctly.
+"PUT /api/employees/AFTD002 HTTP/1.1" 500 18198
+Not Found: /api/employees/AFTD002
+"PUT /api/employees/AFTD002 HTTP/1.1" 404 23
+Not Found: /api/employees/AFTD002
+"PUT /api/employees/AFTD002 HTTP/1.1" 404 23
+Not Found: /api/employees/AFTD002
+"PUT /api/employees/AFTD002 HTTP/1.1" 404 23
+Internal Server Error: /api/employees/AFTD002
+Traceback (most recent call last):
+  File "C:\Program Files (x86)\Python38-32\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Program Files (x86)\Python38-32\lib\site-packages\django\core\handlers\base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Program Files (x86)\Python38-32\lib\site-packages\django\core\handlers\base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Program Files (x86)\Python38-32\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\Program Files (x86)\Python38-32\lib\site-packages\django\views\generic\base.py", line 71, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\jayu_\AppData\Roaming\Python\Python38\site-packages\rest_framework\views.py", line 505, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\jayu_\AppData\Roaming\Python\Python38\site-packages\rest_framework\views.py", line 465, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\jayu_\AppData\Roaming\Python\Python38\site-packages\rest_framework\views.py", line 476, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\jayu_\AppData\Roaming\Python\Python38\site-packages\rest_framework\views.py", line 502, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "I:\Nidhi\GitHub\AFour\employees\views.py", line 74, in put
+    print(self.queryset.data)
+AttributeError: 'Employee' object has no attribute 'data'
+"PUT /api/employees/AFTD002 HTTP/1.1" 500 17450
+Not Found: /api/employees/AFTD002
+"PUT /api/employees/AFTD002 HTTP/1.1" 404 23
+Not Found: /api/employees/AFTD002
+"PUT /api/employees/AFTD002 HTTP/1.1" 404 23
+Not Found: /api/employees/AFTD002
+"PUT /api/employees/AFTD002 HTTP/1.1" 404 23
+Internal Server Error: /api/employees/AFTD002
+Traceback (most recent call last):
+  File "C:\Users\jayu_\AppData\Roaming\Python\Python38\site-packages\rest_framework\request.py", line 409, in __getattr__
+    return getattr(self._request, attr)
+AttributeError: 'WSGIRequest' object has no attribute 'id'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Program Files (x86)\Python38-32\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Program Files (x86)\Python38-32\lib\site-packages\django\core\handlers\base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Program Files (x86)\Python38-32\lib\site-packages\django\core\handlers\base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Program Files (x86)\Python38-32\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\Program Files (x86)\Python38-32\lib\site-packages\django\views\generic\base.py", line 71, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\jayu_\AppData\Roaming\Python\Python38\site-packages\rest_framework\views.py", line 505, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\jayu_\AppData\Roaming\Python\Python38\site-packages\rest_framework\views.py", line 465, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\jayu_\AppData\Roaming\Python\Python38\site-packages\rest_framework\views.py", line 476, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\jayu_\AppData\Roaming\Python\Python38\site-packages\rest_framework\views.py", line 502, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "I:\Nidhi\GitHub\AFour\employees\views.py", line 75, in put
+    print(self.request.id)
+  File "C:\Users\jayu_\AppData\Roaming\Python\Python38\site-packages\rest_framework\request.py", line 411, in __getattr__
+    return self.__getattribute__(attr)
+AttributeError: 'Request' object has no attribute 'id'
+"PUT /api/employees/AFTD002 HTTP/1.1" 500 17878
+Not Found: /api/employees/AFTD002
+"PUT /api/employees/AFTD002 HTTP/1.1" 404 23
+Not Found: /api/employees/AFTD002
+"PUT /api/employees/AFTD002 HTTP/1.1" 404 23
+Not Found: /api/employees/AFTD002
+"PUT /api/employees/AFTD002 HTTP/1.1" 404 23
+Not Found: /api/employees/AFTD002
+"PUT /api/employees/AFTD002 HTTP/1.1" 404 23
+Not Found: /api/employees/AFTD002
+"PUT /api/employees/AFTD002 HTTP/1.1" 404 23
+Method Not Allowed: /api/employees/AFTD002
+"GET /api/employees/AFTD002 HTTP/1.1" 405 40
+Internal Server Error: /api/employees/AFTD002
+Traceback (most recent call last):
+  File "C:\Program Files (x86)\Python38-32\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Program Files (x86)\Python38-32\lib\site-packages\django\core\handlers\base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Program Files (x86)\Python38-32\lib\site-packages\django\core\handlers\base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Program Files (x86)\Python38-32\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\Program Files (x86)\Python38-32\lib\site-packages\django\views\generic\base.py", line 71, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\jayu_\AppData\Roaming\Python\Python38\site-packages\rest_framework\views.py", line 505, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\jayu_\AppData\Roaming\Python\Python38\site-packages\rest_framework\views.py", line 465, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\jayu_\AppData\Roaming\Python\Python38\site-packages\rest_framework\views.py", line 476, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\jayu_\AppData\Roaming\Python\Python38\site-packages\rest_framework\views.py", line 502, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "I:\Nidhi\GitHub\AFour\employees\views.py", line 79, in get
+    return self.get(request, *args, **kwargs)
+  File "I:\Nidhi\GitHub\AFour\employees\views.py", line 79, in get
+    return self.get(request, *args, **kwargs)
+  File "I:\Nidhi\GitHub\AFour\employees\views.py", line 79, in get
+    return self.get(request, *args, **kwargs)
+  [Previous line repeated 927 more times]
+  File "I:\Nidhi\GitHub\AFour\employees\views.py", line 76, in get
+    self.queryset = Employee.objects.get(id = empId)
+  File "C:\Program Files (x86)\Python38-32\lib\site-packages\django\db\models\manager.py", line 82, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Program Files (x86)\Python38-32\lib\site-packages\django\db\models\query.py", line 411, in get
+    num = len(clone)
+  File "C:\Program Files (x86)\Python38-32\lib\site-packages\django\db\models\query.py", line 258, in __len__
+    self._fetch_all()
+  File "C:\Program Files (x86)\Python38-32\lib\site-packages\django\db\models\query.py", line 1261, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+  File "C:\Program Files (x86)\Python38-32\lib\site-packages\django\db\models\query.py", line 57, in __iter__
+    results = compiler.execute_sql(chunked_fetch=self.chunked_fetch, chunk_size=self.chunk_size)
+  File "C:\Program Files (x86)\Python38-32\lib\site-packages\django\db\models\sql\compiler.py", line 1139, in execute_sql
+    sql, params = self.as_sql()
+  File "C:\Program Files (x86)\Python38-32\lib\site-packages\django\db\models\sql\compiler.py", line 506, in as_sql
+    where, w_params = self.compile(self.where) if self.where is not None else ("", [])
+  File "C:\Program Files (x86)\Python38-32\lib\site-packages\django\db\models\sql\compiler.py", line 423, in compile
+    sql, params = node.as_sql(self, self.connection)
+  File "C:\Program Files (x86)\Python38-32\lib\site-packages\django\db\models\sql\where.py", line 81, in as_sql
+    sql, params = compiler.compile(child)
+  File "C:\Program Files (x86)\Python38-32\lib\site-packages\django\db\models\sql\compiler.py", line 423, in compile
+    sql, params = node.as_sql(self, self.connection)
+  File "C:\Program Files (x86)\Python38-32\lib\site-packages\django\db\models\lookups.py", line 176, in as_sql
+    lhs_sql, params = self.process_lhs(compiler, connection)
+  File "C:\Program Files (x86)\Python38-32\lib\site-packages\django\db\models\lookups.py", line 167, in process_lhs
+    lhs_sql, params = super().process_lhs(compiler, connection, lhs)
+  File "C:\Program Files (x86)\Python38-32\lib\site-packages\django\db\models\lookups.py", line 81, in process_lhs
+    lhs = lhs.resolve_expression(compiler.query)
+  File "C:\Program Files (x86)\Python38-32\lib\site-packages\django\db\models\expressions.py", line 244, in resolve_expression
+    c = self.copy()
+  File "C:\Program Files (x86)\Python38-32\lib\site-packages\django\db\models\expressions.py", line 345, in copy
+    return copy.copy(self)
+  File "C:\Program Files (x86)\Python38-32\lib\copy.py", line 102, in copy
+    return _reconstruct(x, None, *rv)
+  File "C:\Program Files (x86)\Python38-32\lib\copy.py", line 264, in _reconstruct
+    y = func(*args)
+  File "C:\Program Files (x86)\Python38-32\lib\copyreg.py", line 91, in __newobj__
+    return cls.__new__(cls, *args)
+  File "C:\Program Files (x86)\Python38-32\lib\site-packages\django\utils\deconstruct.py", line 16, in __new__
+    obj = super(klass, cls).__new__(cls)
+RecursionError: maximum recursion depth exceeded while calling a Python object
+"GET /api/employees/AFTD002 HTTP/1.1" 500 125561
+Not Found: /api/employees/AFTD002
+"PUT /api/employees/AFTD002 HTTP/1.1" 404 23
+Internal Server Error: /api/employees/AFTD002
+Traceback (most recent call last):
+  File "C:\Program Files (x86)\Python38-32\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "C:\Program Files (x86)\Python38-32\lib\site-packages\django\core\handlers\base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Program Files (x86)\Python38-32\lib\site-packages\django\core\handlers\base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Program Files (x86)\Python38-32\lib\site-packages\django\views\decorators\csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "C:\Program Files (x86)\Python38-32\lib\site-packages\django\views\generic\base.py", line 71, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\jayu_\AppData\Roaming\Python\Python38\site-packages\rest_framework\views.py", line 505, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\jayu_\AppData\Roaming\Python\Python38\site-packages\rest_framework\views.py", line 465, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\jayu_\AppData\Roaming\Python\Python38\site-packages\rest_framework\views.py", line 476, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\jayu_\AppData\Roaming\Python\Python38\site-packages\rest_framework\views.py", line 502, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "I:\Nidhi\GitHub\AFour\employees\views.py", line 72, in put
+    print(connection.queries)
+NameError: name 'connection' is not defined
+"PUT /api/employees/AFTD002 HTTP/1.1" 500 17422
+Not Found: /api/employees/AFTD002
+"PUT /api/employees/AFTD002 HTTP/1.1" 404 23
