@@ -48,13 +48,28 @@ class EmployeeView(
         return self.retrieve(request, *args, **kwargs)
 
     def put(self, request, *args, **kwargs):
+        # Check if manager_id was changed
+        newManagerId = self.request.data.get('manager_id')
+
+        if newManagerId is not None:
+            # This means that manager_id is being updated
+            # Fetch the data for newManagerId from employee table
+            try:
+                # Now, fetch the data for the new manager
+                newManagerData = Employee.objects.get(id = newManagerId)
+            except:
+                return HttpResponseBadRequest('New manager_id is invalid')
+
+            # update the employee row with new manager id and name
+            self.request.data['manager_name'] = newManagerData.first_name + ' ' + newManagerData.last_name
+
         return self.partial_update(request, *args, **kwargs)
 
     # Request PUT /api/employees/AFTD002 with payload {"coe_id": "BFTD0648", "coe": "COE Test Hello", "email": "test@test2.com"}
     def get_queryset(self):
         # user filter and not get because filter returns a queryset and not get
         empId = self.kwargs['id']
-        return Employee.objects.filter(id = empId) 
+        return Employee.objects.filter(id = empId)
 
 class QuarterlyReviewView(generics.ListCreateAPIView):
     serializer_class = QuarterlyReviewSerializer
