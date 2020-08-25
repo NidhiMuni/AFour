@@ -74,7 +74,7 @@ class EmployeeView(
                 qr.manager_email = newManagerData.email
                 qr.save()
 
-            # fetch the employee records from Yearly table
+            # fetch the employee records from Yearly table   
             yearlyReviews = YearlyReview.objects.filter(employee_id = empId, workflow_status = -100)
 
             # update the row(s) with new manager's data. Note: there can be multiple records for the same employee                                           v v v vg 
@@ -84,8 +84,76 @@ class EmployeeView(
                 yr.manager_email = newManagerData.email
                 yr.save()
 
-        return self.partial_update(request, *args, **kwargs)
+        # Check if du_head was changed
+        newDUHeadId = self.request.data.get('du_head_id')
 
+        if newDUHeadId is not None:
+            # This means that duhead_id is being updated
+            # Fetch the data for newDUheadID from employee table
+            try:
+                # Now, fetch the data for the new manager
+                newDUHeadData = Employee.objects.get(id = newDUHeadId)
+            except:
+                return HttpResponseBadRequest('New du_head_id is invalid')
+   
+            # update the employee row with new manager id and name
+            self.request.data['du_head_name'] = newDUHeadData.first_name + ' ' + newDUHeadData.last_name
+
+            # fetch the employee records from Quarterly table
+            quarterlyReviews = QuarterlyReview.objects.filter(employee_id = empId, workflow_status = -100)
+
+            # update the row(s) with new du head's data. Note: there can be multiple records for the same employee                                           v v v vg 
+            for qr in quarterlyReviews:
+                qr.du_head_id = newDUHeadData.id
+                qr.du_head_name = newDUHeadData.first_name + ' ' + newDUHeadData.last_name
+                qr.du_head_email = newDUHeadData.email
+                qr.save()
+
+            # fetch the employee records from Yearly table   
+            yearlyReviews = YearlyReview.objects.filter(employee_id = empId, workflow_status = -100)
+
+            # update the row(s) with new du head's data. Note: there can be multiple records for the same employee                                           v v v vg 
+            for yr in yearlyReviews:
+                yr.du_head_id = newDUHeadData.id
+                yr.du_head_name = newDUHeadData.first_name + ' ' + newDUHeadData.last_name
+                yr.du_head_email = newDUHeadData.email
+                yr.save()
+
+        # Check if coe id was changed
+        newCOEId = self.request.data.get('coe_id')
+
+        if newCOEId is not None:
+            # This means that coe id is being updated
+            try:
+                # Now, fetch the data for the new coe
+                newCOEData = Employee.objects.get(id = newCOEId)
+            except:
+                return HttpResponseBadRequest('New coe_id is invalid')
+   
+            # update the employee row with new coe id and name
+            self.request.data['coe'] = newCOEData.first_name + ' ' + newCOEData.last_name
+
+            # fetch the employee records from Quarterly table
+            quarterlyReviews = QuarterlyReview.objects.filter(employee_id = empId, workflow_status = -100)
+
+            # update the row(s) with new coe head's data. Note: there can be multiple records for the same employee                                           v v v vg 
+            for qr in quarterlyReviews:
+                qr.coe_head_id = newCOEData.id
+                qr.coe_head_name = newCOEData.first_name + ' ' + newCOEData.last_name
+                qr.save()
+
+            # fetch the employee records from Yearly table   
+            yearlyReviews = YearlyReview.objects.filter(employee_id = empId, workflow_status = -100)
+
+            # update the row(s) with new coe head's data. Note: there can be multiple records for the same employee                                           v v v vg 
+            for yr in yearlyReviews:
+                yr.coe_head_id = newCOEData.id
+                yr.coe_head_name = newCOEData.first_name + ' ' + newCOEData.last_name
+                yr.save()
+                
+
+        return self.partial_update(request, *args, **kwargs)
+    
     # Request PUT /api/employees/AFTD002 with payload {"coe_id": "BFTD0648", "coe": "COE Test Hello", "email": "test@test2.com"}
     def get_queryset(self):
         # user filter and not get because filter returns a queryset and not get
