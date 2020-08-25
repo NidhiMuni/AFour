@@ -3,7 +3,7 @@ from django.http import HttpRequest, HttpResponse, JsonResponse, HttpResponseBad
 from rest_framework.parsers import JSONParser
 from rest_framework.generics import GenericAPIView
 from rest_framework.mixins import UpdateModelMixin, RetrieveModelMixin
-from .models import Employee, QuarterlyReview
+from .models import Employee, QuarterlyReview, YearlyReview
 from .serializers import EmployeeSerializer, QuarterlyReviewSerializer
 from rest_framework import generics
 from django.views.decorators.csrf import csrf_exempt
@@ -73,6 +73,16 @@ class EmployeeView(
                 qr.manager_name = newManagerData.first_name + ' ' + newManagerData.last_name
                 qr.manager_email = newManagerData.email
                 qr.save()
+
+            # fetch the employee records from Yearly table
+            yearlyReviews = YearlyReview.objects.filter(employee_id = empId, workflow_status = -100)
+
+            # update the row(s) with new manager's data. Note: there can be multiple records for the same employee                                           v v v vg 
+            for yr in yearlyReviews:
+                yr.manager_id = newManagerData.id
+                yr.manager_name = newManagerData.first_name + ' ' + newManagerData.last_name
+                yr.manager_email = newManagerData.email
+                yr.save()
 
         return self.partial_update(request, *args, **kwargs)
 
