@@ -50,6 +50,7 @@ class EmployeeView(
     def put(self, request, *args, **kwargs):
         # Check if manager_id was changed
         newManagerId = self.request.data.get('manager_id')
+        empId = self.kwargs['id']
 
         if newManagerId is not None:
             # This means that manager_id is being updated
@@ -59,9 +60,19 @@ class EmployeeView(
                 newManagerData = Employee.objects.get(id = newManagerId)
             except:
                 return HttpResponseBadRequest('New manager_id is invalid')
-
+   
             # update the employee row with new manager id and name
             self.request.data['manager_name'] = newManagerData.first_name + ' ' + newManagerData.last_name
+
+            # fetch the employee records from Quarterly table
+            quarterlyReviews = QuarterlyReview.objects.filter(employee_id = empId, workflow_status = -100)
+
+            # update the row(s) with new manager's data. Note: there can be multiple records for the same employee                                           v v v vg 
+            for qr in quarterlyReviews:
+                qr.manager_id = newManagerData.id
+                qr.manager_name = newManagerData.first_name + ' ' + newManagerData.last_name
+                qr.manager_email = newManagerData.email
+                qr.save()
 
         return self.partial_update(request, *args, **kwargs)
 
