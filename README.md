@@ -5,6 +5,8 @@
 2. **/api/quarterlyreview**
 * This returns a JSON of the quarterly review results of all employees in the database
 * It takes an optional query parameter employee_id to return quarterly review results in the given employee_id. For example, /api/quarterlyreview?employee_id=AFTI0015 will return the list of quarterly review results for employee AFTI0015
+3. **/api/employees/<employee_id>**
+* When the coe_id/du_head_id/manager_id is changed in the Body, the id, name, and email of the coe head/du head/manager are changed in the employee, quarterly review, and yearly review tables
 
 # Setup instructions
 * Install Python 3.8 from python.org
